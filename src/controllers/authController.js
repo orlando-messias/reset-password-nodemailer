@@ -1,5 +1,7 @@
 const User = require('../models/User');
 
+const { createToken } = require('../middlewares/auth');
+
 // register a new user
 const registerUser = async (req, res) => {
   try {
@@ -13,7 +15,8 @@ const registerUser = async (req, res) => {
     //do not return password field
     user.password = undefined;
 
-    return res.send({ user });
+    // returns the new user and created token
+    return res.send({ user, token: createToken(user) });
 
   } catch (err) {
     console.log(err)
