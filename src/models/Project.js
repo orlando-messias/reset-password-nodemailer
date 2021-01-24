@@ -12,6 +12,7 @@ const ProjectSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
+    required: true,
   },
   tasks: [{
     type: mongoose.Schema.Types.ObjectId,

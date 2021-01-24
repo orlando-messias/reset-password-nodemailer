@@ -7,5 +7,6 @@ projectRoutes.get('/', validateToken, projectsController.getAll);
 projectRoutes.get('/:projectId', validateToken, projectsController.getProjectById);
 projectRoutes.post('/', validateToken, projectsController.newProject);
 projectRoutes.delete('/:projectId', validateToken, projectsController.deleteProject);
+projectRoutes.put('/:projectId', validateToken, projectsController.updateProject);
 
 module.exports = projectRoutes;
